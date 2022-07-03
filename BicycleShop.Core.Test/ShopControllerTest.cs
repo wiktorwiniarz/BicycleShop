@@ -92,6 +92,39 @@ namespace BicycleShop.Core
             Assert.Null(shop.BuyBike(c1, 1));
 
         }
+        [Fact]
+        public void ResignFromBuyiong()
+        {
+            Bike b1 = new Bike()
+            {
+                Id = 1,
+                Manufacturer = "Kross",
+                Name = "version1",
+                Price = 143
+            };
+
+            ShopController shop = new ShopController()
+            {
+                Name = "Sklep1"
+            };
+
+            shop.AddBike(b1);
+
+
+            Customer c1 = new Customer()
+            {
+                Name = "Jan",
+                LastName = "Kowalski",
+                Email = "Jkowalski@gmail.com",
+                PhoneNumber = 516663843
+            };
+            shop.BuyBike(c1, 1);
+
+            // po zwrocie możliwe powinno być ponowne kupno tego samego roweru
+            Assert.Equal(shop.BuyBike(c1,1),shop.ReturnBike(b1));
+            // po zwrocie powinno możliwe być usunięcie roweru
+            Assert.Equal(shop.RemoveBike(1), shop.ReturnBike(b1));
+        }
     }
 
 }

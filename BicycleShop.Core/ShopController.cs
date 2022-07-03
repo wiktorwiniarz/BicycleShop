@@ -66,5 +66,10 @@ namespace BicycleShop.Core
 
             return null;
         }
+
+        public Bike ReturnBike(Bike b1)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
