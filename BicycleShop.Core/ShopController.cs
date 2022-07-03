@@ -29,5 +29,10 @@ namespace BicycleShop.Core
             }
             return result;
         }
+
+        public Bike RemoveBike(Bike b1)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

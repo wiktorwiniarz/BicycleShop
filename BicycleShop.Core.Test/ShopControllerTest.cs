@@ -24,6 +24,28 @@ namespace BicycleShop.Core
             };
             // Jeśli dodanie do skelpu się powiedzie funkcja zwróci true
             Assert.True(shop.AddBike(b1));
+            Assert.False(shop.AddBike(b1));
+        }
+        [Fact]
+        public void RemoveBikeFromShop()
+        {
+            Bike b1 = new Bike()
+            {
+                Id = 1,
+                Manufacturer = "Kross",
+                Name = "version1",
+                Price = 143
+            };
+
+            ShopController shop = new ShopController()
+            {
+                Name = "Sklep1"
+            };
+
+            shop.AddBike(b1);
+
+            Assert.Equal(b1, shop.RemoveBike(b1));
         }
     }
+
 }
