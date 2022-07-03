@@ -121,9 +121,11 @@ namespace BicycleShop.Core
             shop.BuyBike(c1, 1);
 
             // po zwrocie możliwe powinno być ponowne kupno tego samego roweru
-            Assert.Equal(shop.BuyBike(c1,1),shop.ReturnBike(b1));
+            Assert.Equal(b1,shop.ReturnBike(1, 516663843));
+            Assert.Equal(b1,shop.BuyBike(c1, 1));
             // po zwrocie powinno możliwe być usunięcie roweru
-            Assert.Equal(shop.RemoveBike(1), shop.ReturnBike(b1));
+            Assert.Equal(b1, shop.ReturnBike(1, 516663843));
+            Assert.Equal(b1, shop.RemoveBike(1));
         }
     }
 

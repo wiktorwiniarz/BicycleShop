@@ -67,9 +67,24 @@ namespace BicycleShop.Core
             return null;
         }
 
-        public Bike ReturnBike(Bike b1)
+        public Bike ReturnBike(int bikeid, int phonenumber)
         {
-            throw new NotImplementedException();
+            foreach(Customer c in Receipts.Keys)
+            {
+                if (c.PhoneNumber == phonenumber)
+                {
+                    foreach(Bike b in Receipts[c])
+                    {
+                        if(b.Id == bikeid)
+                        {
+                            Receipts[c].Remove(b);
+                            BikeList.Add(b);
+                            return b;
+                        }
+                    }
+                }
+            }
+            return null;
         }
     }
 }
