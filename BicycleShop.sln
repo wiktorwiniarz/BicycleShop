@@ -3,9 +3,33 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{E57DC1E7-C771-45D9-8D0C-BE31D98DC147}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BicycleShop.Core.Test", "BicycleShop.Core.Test\BicycleShop.Core.Test.csproj", "{92B10ADE-4EBD-4ACF-B502-B73DCDA51CAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BicycleShop.Core", "BicycleShop.Core\BicycleShop.Core.csproj", "{D60C42A2-CB96-4989-A16F-06ECBC41B503}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92B10ADE-4EBD-4ACF-B502-B73DCDA51CAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92B10ADE-4EBD-4ACF-B502-B73DCDA51CAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92B10ADE-4EBD-4ACF-B502-B73DCDA51CAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92B10ADE-4EBD-4ACF-B502-B73DCDA51CAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D60C42A2-CB96-4989-A16F-06ECBC41B503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D60C42A2-CB96-4989-A16F-06ECBC41B503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D60C42A2-CB96-4989-A16F-06ECBC41B503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D60C42A2-CB96-4989-A16F-06ECBC41B503}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{92B10ADE-4EBD-4ACF-B502-B73DCDA51CAB} = {E57DC1E7-C771-45D9-8D0C-BE31D98DC147}
+		{D60C42A2-CB96-4989-A16F-06ECBC41B503} = {E57DC1E7-C771-45D9-8D0C-BE31D98DC147}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E92E82A2-DC76-4579-A31D-74CE38E49080}
