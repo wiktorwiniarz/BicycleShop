@@ -126,6 +126,7 @@ namespace BicycleShop.Core
             // po zwrocie powinno możliwe być usunięcie roweru
             Assert.Equal(b1, shop.ReturnBike(1, 516663843));
             Assert.Equal(b1, shop.RemoveBike(1));
+
         }
     }
 
