@@ -8,10 +8,13 @@ namespace BicycleShop.Core
         public ShopController()
         {
            BikeList = new List<Bike>();
+            Receipts = new Dictionary<Customer, List<Bike>>();
         }
 
         public string Name { get; set; }
         private List<Bike> BikeList;
+
+        private Dictionary<Customer, List<Bike>> Receipts;
 
         public bool AddBike(Bike b1)
         {
@@ -43,9 +46,25 @@ namespace BicycleShop.Core
             return null;
         }
 
-        public Bike BuyBike(Customer c1, int v)
+        public Bike BuyBike(Customer c1, int bikeid)
         {
-            throw new NotImplementedException();
+            foreach (Bike b in BikeList)
+            {
+                if (b.Id == bikeid)
+                {
+                    BikeList.Remove(b);
+                    try
+                    {
+                        Receipts[c1].Add(b);
+                    }catch (KeyNotFoundException e){
+                        Receipts.Add(c1, new List<Bike>{ b });
+                    }
+                    
+                    return b;
+                }
+            }
+
+            return null;
         }
     }
 }
