@@ -42,5 +42,10 @@ namespace BicycleShop.Core
             }
             return null;
         }
+
+        public Bike BuyBike(Customer c1, int v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -53,6 +53,45 @@ namespace BicycleShop.Core
             // Po usunięciu roweru możliwe jest ponowne jego dodanie
             Assert.True(shop.AddBike(b1));
         }
+
+
+        [Fact]
+        public void BikeBuyingTest()
+        {
+            Bike b1 = new Bike()
+            {
+                Id = 1,
+                Manufacturer = "Kross",
+                Name = "version1",
+                Price = 143
+            };
+
+            ShopController shop = new ShopController()
+            {
+                Name = "Sklep1"
+            };
+
+            shop.AddBike(b1);
+
+
+            Customer c1 = new Customer()
+            {
+                Name = "Jan",
+                LastName = "Kowalski",
+                Email = "Jkowalski@gmail.com",
+                PhoneNumber = 516663843
+            };
+
+
+            // Kupuje rower który jest w sklepie
+            Assert.Equal(b1,shop.BuyBike(c1, 1));
+            // Kupuje rower którego nie ma w sklepie
+            Assert.Null(shop.BuyBike(c1, 2));
+
+            // Kupuje rower który został sprzedany wcześniej
+            Assert.Null(shop.BuyBike(c1, 1));
+
+        }
     }
 
 }
