@@ -45,6 +45,13 @@ namespace BicycleShop.Core
             shop.AddBike(b1);
             // po usunięciu zwracany jest rower który został usunięty
             Assert.Equal(b1, shop.RemoveBike(1));
+            // Nie można usunąć dwa razy tego samego roweru
+            Assert.Equal(null, shop.RemoveBike(1));
+            // nie można usunąć roweru którego nie ma
+            Assert.Equal(null, shop.RemoveBike(2));
+
+            // Po usunięciu roweru możliwe jest ponowne jego dodanie
+            Assert.True(shop.AddBike(b1));
         }
     }
 
