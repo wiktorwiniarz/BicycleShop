@@ -22,7 +22,7 @@ namespace BicycleShop.Core
             {
                 Name = "Sklep1"
             };
-            // Jeśli dodanie do skelpu się powiedzie funkcja zwróci true
+            // Jeśli dodanie do sklepu się powiedzie funkcja zwróci true
             Assert.True(shop.AddBike(b1));
             Assert.False(shop.AddBike(b1));
         }
