@@ -43,8 +43,8 @@ namespace BicycleShop.Core
             };
 
             shop.AddBike(b1);
-
-            Assert.Equal(b1, shop.RemoveBike(b1));
+            // po usunięciu zwracany jest rower który został usunięty
+            Assert.Equal(b1, shop.RemoveBike(1));
         }
     }
 

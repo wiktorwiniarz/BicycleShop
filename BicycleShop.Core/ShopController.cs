@@ -30,9 +30,17 @@ namespace BicycleShop.Core
             return result;
         }
 
-        public Bike RemoveBike(Bike b1)
+        public Bike RemoveBike(int bikeid)
         {
-            throw new NotImplementedException();
+            foreach (Bike b in BikeList)
+            {
+                if (b.Id == bikeid)
+                {
+                    BikeList.Remove(b);
+                    return b;
+                }
+            }
+            return null;
         }
     }
 }
